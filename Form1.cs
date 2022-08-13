@@ -180,66 +180,6 @@ namespace SpeechToText
             return speechRecognitionResult.Text;
         }
 
-        private void SpeechOutput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SpeechKeytextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label_Region_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label_CurrentStatus_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

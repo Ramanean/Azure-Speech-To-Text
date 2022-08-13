@@ -68,7 +68,7 @@
             this.SpeechOutput.Size = new System.Drawing.Size(1040, 367);
             this.SpeechOutput.TabIndex = 3;
             this.SpeechOutput.Text = "";
-            this.SpeechOutput.TextChanged += new System.EventHandler(this.SpeechOutput_TextChanged);
+        
             // 
             // Label_SpeechServiceKey
             // 
@@ -78,7 +78,7 @@
             this.Label_SpeechServiceKey.Size = new System.Drawing.Size(178, 20);
             this.Label_SpeechServiceKey.TabIndex = 4;
             this.Label_SpeechServiceKey.Text = "Azure Speech Service Key";
-            this.Label_SpeechServiceKey.Click += new System.EventHandler(this.label1_Click);
+    
             // 
             // SpeechKeyTextBox
             // 
@@ -87,7 +87,7 @@
             this.SpeechKeyTextBox.Size = new System.Drawing.Size(414, 27);
             this.SpeechKeyTextBox.TabIndex = 5;
             this.SpeechKeyTextBox.UseSystemPasswordChar = true;
-            this.SpeechKeyTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+    
             // 
             // Label_Region
             // 
@@ -97,7 +97,7 @@
             this.Label_Region.Size = new System.Drawing.Size(214, 20);
             this.Label_Region.TabIndex = 6;
             this.Label_Region.Text = "Azure Speech Resource Region";
-            this.Label_Region.Click += new System.EventHandler(this.Label_Region_Click);
+            
             // 
             // SpeechRegionTextBox
             // 
@@ -106,7 +106,7 @@
             this.SpeechRegionTextBox.Size = new System.Drawing.Size(111, 27);
             this.SpeechRegionTextBox.TabIndex = 7;
             this.SpeechRegionTextBox.Text = "centralus";
-            this.SpeechRegionTextBox.TextChanged += new System.EventHandler(this.SpeechKeytextBox1_TextChanged);
+        
             // 
             // Label_Language
             // 
@@ -129,7 +129,7 @@
             this.LanguageSelect.Size = new System.Drawing.Size(151, 28);
             this.LanguageSelect.TabIndex = 10;
             this.LanguageSelect.TabStop = false;
-            this.LanguageSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+       
             // 
             // Label_Status
             // 
@@ -139,7 +139,7 @@
             this.Label_Status.Size = new System.Drawing.Size(49, 20);
             this.Label_Status.TabIndex = 11;
             this.Label_Status.Text = "Status";
-            this.Label_Status.Click += new System.EventHandler(this.label1_Click_1);
+           
             // 
             // Label_CurrentStatus
             // 
@@ -150,7 +150,7 @@
             this.Label_CurrentStatus.TabIndex = 12;
             this.Label_CurrentStatus.Text = "                                                                                 " +
     "                          ";
-            this.Label_CurrentStatus.Click += new System.EventHandler(this.Label_CurrentStatus_Click);
+            
             // 
             // Form1
             // 
