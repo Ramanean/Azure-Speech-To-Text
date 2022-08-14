@@ -30,7 +30,7 @@ namespace SpeechToText
         }
 
         /// <summary>
-        /// Starting the translation when Speak button is clicked
+        /// Starts the translation when Speak button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,7 +55,7 @@ namespace SpeechToText
         }
 
         /// <summary>
-        /// Starting the translation 
+        /// Starts the Translation by using Azure Speech Services SDK and returns back the Text!
         /// </summary>
         /// <returns>Text from the Speech</returns>
         public async Task StartTranslation()
@@ -84,10 +84,9 @@ namespace SpeechToText
             }
 
 
-            /*
-             * Getting the Key needed for Translation from the Azure Speech services (Need to be entered in the Speech TextBox)
-             * If the text in the TextBox "SpeechKey" is null then it takes the value from the code
-             */
+            /* Getting the Key needed for Translation from the Azure Speech services (Need to be entered in the Speech TextBox)
+              If the text in the TextBox "SpeechKey" is null then it takes the value from the code  
+            */
             string AzureSpeechKey = SpeechKeyTextBox.Text;
             if (string.IsNullOrEmpty(AzureSpeechKey))
             {
@@ -99,42 +98,35 @@ namespace SpeechToText
             }
 
 
-
-
-            /*
-             * Sets the ServiceRegion and Gets the speech from the Microphone and converts the Speech into Text
-             * 1.Next Line with a pause in speech before and after types the text in the next line
-             * 2.Colon with a pause in speech before and after types colon
-             * 
-             * */
+            
+             /* Sets the ServiceRegion and Gets the speech from the Microphone and converts the Speech into Text
+               1.Next Line with a pause in speech before and after types the text in the next line
+               2.Colon with a pause in speech before and after types colon
+               3.Paragraph will create a new Paragraph */
             YourServiceRegion = SpeechRegionTextBox.Text;
             var speechConfig = SpeechConfig.FromSubscription(YourSubscriptionKey, YourServiceRegion);
+
+
+
+            //Gets the language as well as any text that has been already translated
             speechConfig.SpeechRecognitionLanguage = LanguageSelect.Text;
-            String SpeechOutputText = SpeechOutput.Text;
+            string SpeechOutputText = SpeechOutput.Text;
             using var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
-            using var speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
-         
-            //MessageBox.Show("start speaking");
+            using var speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);        
             var speechRecognitionResult = await speechRecognizer.RecognizeOnceAsync();
+
+            //Returns the Speech as Text 
             string ReturnText = OutputSpeechRecognitionResult(speechRecognitionResult,Label_CurrentStatus);
+            string FinalReturnText = ConvertReturnText(ReturnText);
+
             Label_CurrentStatus.Text = "Translating";
-            if (ReturnText == "Paragraph.")
-            {
-                ReturnText = "\n\n";
-            }
-            if (ReturnText == "Next line.")
-            {
-                ReturnText = "\n";
-            }
-                if (ReturnText == "Colon.")
-            {
-                ReturnText = ":";
-            }
-            if (ReturnText == "Arrow mark")
-            {
-                ReturnText = ">>>>";
-            }
-            SpeechOutput.Text = SpeechOutputText+ReturnText;
+       
+
+            /*
+             * Setting the Output with translated Text and again starting the Translation.
+             * And when Stop button is clicked, Translation would be stopped but can be restarted again using Speak button
+             */
+            SpeechOutput.Text = SpeechOutputText+ FinalReturnText;
             try
             {              
                 await StartTranslation();
@@ -150,6 +142,13 @@ namespace SpeechToText
             }
            
         }
+
+        /// <summary>
+        /// Get the Speech Recognizition Results from Azure and Sets the Label Status
+        /// </summary>
+        /// <param name="speechRecognitionResult">Speech Recognition</param>
+        /// <param name="LabelStatus">Label which needs to set the Status</param>
+        /// <returns></returns>
 
         public static string OutputSpeechRecognitionResult(SpeechRecognitionResult speechRecognitionResult,Label LabelStatus)
         {
@@ -178,6 +177,30 @@ namespace SpeechToText
                     break;
             }
             return speechRecognitionResult.Text;
+        }
+
+        public static string ConvertReturnText(string ReturnText)
+        {
+            switch (ReturnText)
+            {
+                case "New paragraph.":
+                    ReturnText = "\n\n";
+                    break;
+
+                case "Next line.":
+                    ReturnText = "\n";
+                    break;
+
+                case "Colon.":
+                    ReturnText = ":";
+                    break;
+
+                case "Arrow mark":
+                    ReturnText = ">>>>";
+                    break;
+
+            }          
+            return ReturnText;
         }
 
       
