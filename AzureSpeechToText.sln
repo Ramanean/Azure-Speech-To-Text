@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSpeechToText", "AzureSpeechToText.csproj", "{8C5DCF75-B600-491B-A9C2-E40513B55B51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSpeechToText", "AzureSpeechToText.csproj", "{8C5DCF75-B600-491B-A9C2-E40513B55B51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSpeechToText.Tests", "..\AzureSpeechToText.Tests\AzureSpeechToText.Tests.csproj", "{09EC58E6-ED16-43F8-B7BF-5E5798CE136E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureSpeechToText", "AzureSpeechToText", "{65F5D4A3-8D6F-4F5A-8DD1-0BB9F0FCD9F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSpeechToText.Tests", "UnitTesting\AzureSpeechToText.Tests.csproj", "{94BC1EDE-4876-4877-98AE-ADF43F440E79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +19,16 @@ Global
 		{8C5DCF75-B600-491B-A9C2-E40513B55B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5DCF75-B600-491B-A9C2-E40513B55B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5DCF75-B600-491B-A9C2-E40513B55B51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09EC58E6-ED16-43F8-B7BF-5E5798CE136E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09EC58E6-ED16-43F8-B7BF-5E5798CE136E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09EC58E6-ED16-43F8-B7BF-5E5798CE136E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09EC58E6-ED16-43F8-B7BF-5E5798CE136E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94BC1EDE-4876-4877-98AE-ADF43F440E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94BC1EDE-4876-4877-98AE-ADF43F440E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94BC1EDE-4876-4877-98AE-ADF43F440E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94BC1EDE-4876-4877-98AE-ADF43F440E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C5DCF75-B600-491B-A9C2-E40513B55B51} = {65F5D4A3-8D6F-4F5A-8DD1-0BB9F0FCD9F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD8ABCD6-473A-4513-96D0-C84932F8CE33}
