@@ -5,7 +5,7 @@ Speech Services key is needed which can be got from Azure by following the Steps
 
 To run the application follow the below steps
 
-Step 1: Extract the Zip under releases and click on AzureSpeechToText
+Step 1: [Download the Application](https://github.com/Ramanean/Azure-Speech-To-Text/releases/tag/v2.1.0) & Extract it to a folder on your windows desktop and click on AzureSpeechToText
 
 Step 2: Copy and paste the Azure Speech services key into the "Azure Speech Service Key" Textbox
 
