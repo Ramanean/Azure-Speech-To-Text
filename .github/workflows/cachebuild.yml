@@ -21,9 +21,9 @@ jobs:
         key: ${{ env.cachekey }}
         restore-keys: ${{ env.cachekey }}
 
-    - uses: actions/setup-dotnet@v2
-    - name: Setting DotNet
+    - uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x     
+        dotnet-version: 6.0.x
+        cache: true
 
 
