@@ -10,16 +10,18 @@ jobs:
   build:
 
     runs-on: windows-latest
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
 
     steps:
 
     - uses: actions/cache@v4
     - name: setting up cache
       with:
-        path: ~/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-
+      path: ${{ github.workspace }}/.nuget/packages
+            key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-nuget-
 
     - uses: actions/setup-dotnet@v2
     - name: Setting DotNet
